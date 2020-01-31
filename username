@@ -1,0 +1,47 @@
+dict = {'vignesh':'123','aravind':'456','karthi':'789'}
+f= open("dictfile.txt","w")
+my_dict={}
+updated_dict={}
+writefile  = str(dict)
+writefile = writefile.strip('{')
+writefile = writefile.strip('}')
+#writefile =  writefile.strip("'")
+f.write(writefile)
+f.close()
+
+file  = open("dictfile.txt","r")
+beforesplit = file.read()
+print(beforesplit)
+
+aftersplit = beforesplit.split(",")
+print(aftersplit)
+
+for i in aftersplit:
+    username,password = i.strip().split(":")
+    my_dict[username.strip()]=password.strip()
+
+print(my_dict)
+
+for i,j in my_dict.items():
+    updated_dict[i.strip("'")] = j.strip("'")
+
+print(updated_dict)
+
+print(updated_dict['vignesh'])
+
+'''with open('dictfile.txt','r') as f:
+    for line in f:
+        for word in line.split(','):
+            for last in word.split(':'):
+                print(last)'''
+
+'''f= open("dictfile.txt","r")
+print(f.read())'''
+
+'''print("Enter the username")
+username = input()
+print("Enter the password")
+password = input()'''
+
+updated_dict.update()
+
